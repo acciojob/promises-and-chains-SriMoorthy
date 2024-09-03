@@ -6,7 +6,7 @@ document.getElementById('form').addEventListener('submit',function(event) {
 	const ag = document.getElementById('age').value
 
 	if(!nm || !ag){
-		alert('please fill the missed fields');
+		alert('Please enter valid details');
 		return;
 	}
 
