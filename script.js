@@ -1,14 +1,14 @@
 //your JS code here. If required.
 let submit = document.getElementById('btn');
-let nm = document.getElementById('name')
-let ag = document.getElementById('age')
+let nm = document.getElementById('name').value
+let ag = document.getElementById('age').value
 let promise = new promise (function(resolve,reject){
 	submit.addEventListener('click', () => {
-		if(ag.innerHTML > 18){
-			resolve(`Welcome, ${nm.innerHTML}. You can vote.`)
+		if(ag >= 18){
+			resolve(`Welcome, ${nm}. You can vote.`)
 		}
 		else{
-			reject(`Oh sorry ${nm.innerHTML}. You aren't old enough.`)
+			reject(`Oh sorry ${nm}. You aren't old enough.`)
 		}
 	})
 })
