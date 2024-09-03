@@ -18,4 +18,4 @@ promise.
 		alert(success);
 	},function(error){
 		alert(error);
-	}
+	});
