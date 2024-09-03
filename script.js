@@ -1,21 +1,31 @@
 //your JS code here. If required.
-let submit = document.getElementById('btn');
-let nm = document.getElementById('name').value
-let ag = document.getElementById('age').value
-let promise = new promise (function(resolve,reject){
-	submit.addEventListener('click', () => {
-		if(ag >= 18){
-			resolve(`Welcome, ${nm}. You can vote.`)
-		}
-		else{
-			reject(`Oh sorry ${nm}. You aren't old enough.`)
-		}
-	})
-})
+document.getElementById('form').addEventListener('submit',function(event) {
+	event.preventDefault();
 
-promise.
-	then(function(success){
-		alert(success);
-	},function(error){
-		alert(error);
+	const nm = document.getElementById('name').value
+	const ag = document.getElementById('age').value
+
+	if(!nm || !ag){
+		alert('please fill the missed fields');
+		return;
+	}
+
+	new promise((resolve,reject) => {
+		setTimeout(()=>{
+			if(ag>=18){
+				resolve();
+			}
+			else{
+				reject();
+			}
+		},4000)
+	})
+	.then(() => {
+		alert(`Welcome, ${nm}. You can vote.`);
+	})
+	.catch(() => {
+		alert(`Oh sorry ${nm}. You aren't old enough.`);
 	});
+});
+
+
