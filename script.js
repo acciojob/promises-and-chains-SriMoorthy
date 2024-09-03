@@ -10,7 +10,7 @@ document.getElementById('form').addEventListener('submit',function(event) {
 		return;
 	}
 
-	new promise((resolve,reject) => {
+	new Promise((resolve,reject) => {
 		setTimeout(()=>{
 			if(ag>=18){
 				resolve();
@@ -18,7 +18,7 @@ document.getElementById('form').addEventListener('submit',function(event) {
 			else{
 				reject();
 			}
-		},4000)
+		},4000);
 	})
 	.then(() => {
 		alert(`Welcome, ${nm}. You can vote.`);
